@@ -1,0 +1,28 @@
+﻿{% extends "base.html" %}
+
+{%block title%}Log in{%endblock%}
+
+{% block sidebar %}
+    <a href="{%url startpage%}">Startpage</a>
+{%endblock%}
+
+{%block content%}
+        <div class="head" align="center">
+            <h1>Enter username and password</h1>
+        </div>
+        {% if form.errors %}
+            <div class="error" align="center">
+            <p class="error"><h2 align='center' style="color:red">Bad login or password</h2></p>
+            </div>
+        {% endif %}
+        <div class="form" align="center">
+            <form action='.' method='post'>
+                <label for="username">User name:</label>
+                <input type="text" name="username" value="" id="username">&nbsp
+                <label for="password">Password:</label>
+                <input type="password" name="password" value="" id="password">&nbsp
+                <input type="submit" value="login" />
+                <input type="hidden" name="next" value="{% url edit_person %}}" />
+            </form>
+        </div>
+{%endblock%}

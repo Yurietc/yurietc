@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{%block title%}My personal information{%endblock%}
+
+{% block sidebar %}
+    <a href="{%url edit_person%}">Edit personal information</a>
+{%endblock%}
+
+{%block content%}
+<div class="person">
+    <p><h1>{{Person}}</h1></p>
+    <p>My birthdate: {{Person.birth_date}}</p>
+    <div class="contacts">
+        <p>E-mail: {{Person.e_mail}}</p>
+        <p>Phone: {{Person.phone}}</p>
+    </div>
+    <div class="about">
+        <p align="left">About myself:</p><p>{{Person.about}}</p>
+    </div>
+</div>
+{%endblock%}

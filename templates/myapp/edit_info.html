@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{%block title%}Edit personal information{%endblock%}
+
+{% block sidebar %}
+    <a href="{%url startpage%}">Startpage</a>
+{%endblock%}
+
+{%block content%}
+    <div class="edit">
+        <form action='.' method='post'>
+            <table border=1>
+                {{form.as_table}}
+            </table>
+            <input type="submit">
+        </form>
+    </div>
+{%endblock%}
